@@ -1,20 +1,55 @@
 export const site = {
   name: 'A. Lohit',
-  title: 'Software Engineering · Problem Solving',
+  title:
+    'Cybersecurity Researcher | Bugcrowd Security Researcher | Software Developer | Mobile App Developer',
   tagline:
-    'I care about tools people actually use—clear UX, solid architecture, and accessibility baked in, not bolted on.',
+    'Computer Science (Cybersecurity) student focused on web application security, responsible vulnerability disclosure, secure software development, and practical security-focused tooling.',
   githubProfile: 'https://github.com/AarushLohit',
   linkedin: 'https://in.linkedin.com/in/aarush-lohit-273877380',
   email: 'mailto:aarushlohit.developer@gmail.com',
 }
 
+export const quickFacts = [
+  '24+ Security Findings Reported',
+  '2,500+ PyPI Downloads',
+  '5 Published Books',
+  'Amazon App Store Published Developer',
+  'IEEE Computer Society Member',
+  'Bugcrowd Security Researcher',
+  'GSSoC Contributor - Open Source Track',
+]
+
 export const projects = [
   {
-    title: 'AarushLohit Git',
-    subtitle: 'PyPI · 100+ downloads',
+    title: 'Log Analyzer for Intrusion Detection',
+    subtitle: 'Python · Security monitoring',
     description:
-      'Python package that automates Git workflows through a focused CLI—shipped to PyPI with steady adoption.',
-    tech: ['Python', 'CLI', 'Packaging'],
+      'Developed a Python-based security monitoring tool for analyzing system and network logs. Implemented detection for brute-force attacks, suspicious authentication attempts, and anomalous access patterns. Generated structured alerts and threat summaries to support incident investigation and security monitoring.',
+    tech: ['Python', 'Log Analysis', 'Intrusion Detection'],
+    links: [],
+  },
+  {
+    title: 'Network Scanner & Service Analyzer',
+    subtitle: 'Python · Attack surface mapping',
+    description:
+      'Built a multi-threaded Python network scanner for host discovery and port enumeration. Implemented banner grabbing and service fingerprinting to identify running services and potential security risks. Generated structured outputs to assist in attack surface mapping and security assessments.',
+    tech: ['Python', 'Networking', 'Service Fingerprinting'],
+    links: [],
+  },
+  {
+    title: 'Responsible Vulnerability Disclosure Research',
+    subtitle: '24+ findings · Coordinated disclosure',
+    description:
+      'Conducted security assessments of public-facing web applications and portals. Identified and responsibly disclosed 24+ security findings through coordinated disclosure channels. Performed reconnaissance, vulnerability validation, impact assessment, proof-of-concept documentation, and remediation reporting.',
+    tech: ['Reconnaissance', 'Vulnerability Validation', 'Reporting'],
+    links: [],
+  },
+  {
+    title: 'Python CLI Automation Tool',
+    subtitle: 'PyPI · 2,500+ downloads',
+    description:
+      'Developed and published a Python automation package on PyPI, simplifying development workflows and Git operations. 2,500+ downloads demonstrate real-world adoption and practical utility.',
+    tech: ['Python', 'CLI', 'PyPI', 'Git Automation'],
     links: [
       {
         label: 'GitHub',
@@ -70,40 +105,120 @@ export const projects = [
 
 export const skillCategories = [
   {
+    title: 'Security',
+    items: [
+      'Web Application Security',
+      'Responsible Disclosure',
+      'Reconnaissance',
+      'Vulnerability Validation',
+      'Impact Assessment',
+    ],
+  },
+  {
     title: 'Languages',
     items: ['Python', 'C', 'Dart', 'JavaScript'],
   },
   {
-    title: 'Core CS',
-    items: ['Data Structures & Algorithms'],
-  },
-  {
     title: 'Technologies',
-    items: ['Flutter', 'MERN Stack'],
+    items: ['Linux', 'Networking', 'Flutter', 'MERN Stack'],
   },
   {
     title: 'Tools',
-    items: ['Git', 'Linux', 'CLI'],
+    items: [
+      'Git',
+      'CLI',
+      'PyPI Packaging',
+      'Security Tool Development',
+      'Open Source Contribution',
+    ],
   },
 ]
 
 export const achievements = [
   {
-    title: 'Top 40 Author',
-    detail: 'BriBooks Young Author Fair',
-    period: '2024–2025',
+    title: 'GSSoC Contributor - Open Source Track',
+    detail:
+      'Contributing to open-source projects through GirlScript Summer of Code with a focus on practical engineering, collaboration, and maintainable improvements.',
+    period: 'GirlScript Summer of Code',
   },
   {
-    title: 'Music release',
-    detail: '“Thirumbhi Varuvayo” on Spotify',
-    period: '2024',
+    title: 'Zairok (Amazon App Store)',
+    detail: 'Published mobile app developer with Zairok live on Amazon Appstore.',
+    period: 'Mobile app',
   },
+  {
+    title: 'Top Author',
+    detail: 'BriBooks Young Author Fair',
+    period: '2024-2025',
+  },
+  {
+    title: '5 Published Science Fiction Books',
+    detail: 'Published author alongside software and security work.',
+    period: 'Author',
+  },
+  {
+    title: 'Python Package',
+    detail: 'Published Python CLI automation package on PyPI.',
+    period: 'PyPI',
+  },
+  {
+    title: 'GitHub Projects',
+    detail: 'Open-source projects covering automation, mobile apps, and security tooling.',
+    period: 'Open source',
+  },
+]
+
+export const certifications = [
+  {
+    title: 'Introduction to Cybersecurity by Cisco',
+    issuer: 'Cisco',
+    href: 'https://www.credly.com/badges/b5d7f108-e2bb-4914-b6f7-2945a4e5f7df/public_url',
+  },
+  {
+    title: 'Red Hat System Administration I (RH124 - RHA) - Ver. 10',
+    issuer: 'Red Hat',
+    href: 'https://www.credly.com/badges/b7364375-9b80-4836-b11f-4d5e2af508a8/public_url',
+  },
+  {
+    title: 'Google Cloud Digital Leader',
+    issuer: 'Google Cloud',
+    href: 'https://www.skills.google/public_profiles/43109f47-8b9a-4610-93b4-39c49dea8653',
+  },
+]
+
+export const communityLeadership = [
+  {
+    title: 'GSSoC Contributor - Open Source Track',
+    detail:
+      'Participates in GirlScript Summer of Code as an open-source contributor, working on real project improvements while collaborating with maintainers and the developer community.',
+  },
+  {
+    title: 'IEEE Computer Society',
+    detail:
+      'Active member participating in cybersecurity workshops, technical events, Capture The Flag (CTF) competitions, and peer knowledge-sharing initiatives.',
+  },
+  {
+    title: 'Team Lead - IT Training Hub',
+    detail:
+      'Led student technical teams, provided mentorship, coordinated projects, and supported collaborative problem-solving.',
+  },
+]
+
+export const finalImpression = [
+  'Cybersecurity Researcher',
+  'Responsible Disclosure',
+  'Security Tool Builder',
+  'Software Developer',
+  'Mobile App Developer',
+  'Published Author',
 ]
 
 export const navLinks = [
   { href: '#about', label: 'About' },
   { href: '#projects', label: 'Projects' },
   { href: '#skills', label: 'Skills' },
+  { href: '#certifications', label: 'Certifications' },
+  { href: '#community', label: 'Community' },
   { href: '#achievements', label: 'Achievements' },
   { href: '#contact', label: 'Contact' },
 ]
@@ -113,14 +228,14 @@ export const scrollSpyIds = navLinks.map((l) => l.href.replace('#', ''))
 export const aboutHighlights = [
   {
     icon: 'layers',
-    text: 'CS undergrad shipping real software—not just tutorials. I like problems where the edge cases matter.',
+    text: 'Computer Science (Cybersecurity) student passionate about web application security, responsible vulnerability disclosure, secure software development, and cybersecurity research.',
   },
   {
     icon: 'code',
-    text: 'Python and Flutter are where I’ve shipped the most; I’m comfortable across the stack when a feature needs it.',
+    text: 'Experienced in Python, Linux, networking, mobile application development, and security tool development.',
   },
   {
     icon: 'a11y',
-    text: 'Accessibility isn’t a checkbox for me. I design and build with inclusion as a constraint from day one.',
+    text: 'Actively participates in responsible disclosure programs and cybersecurity communities while building practical security-focused solutions.',
   },
 ]

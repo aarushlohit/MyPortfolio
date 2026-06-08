@@ -2,14 +2,26 @@ import { motion, useReducedMotion } from 'framer-motion'
 import {
   aboutHighlights,
   achievements,
+  certifications,
+  communityLeadership,
+  finalImpression,
   navLinks,
   projects,
+  quickFacts,
   scrollSpyIds,
   site,
   skillCategories,
 } from './data/content.js'
 import { useScrollSpy } from './hooks/useScrollSpy.js'
-import { GitHubIcon, LayersIcon, CodeBracketsIcon, AccessibilityIcon, LinkedInIcon, MailIcon } from './components/icons.jsx'
+import {
+  AccessibilityIcon,
+  CodeBracketsIcon,
+  ExternalIcon,
+  GitHubIcon,
+  LayersIcon,
+  LinkedInIcon,
+  MailIcon,
+} from './components/icons.jsx'
 import { MotionSection } from './components/MotionSection.jsx'
 import { Navbar } from './components/Navbar.jsx'
 import { ProjectCard } from './components/ProjectCard.jsx'
@@ -66,7 +78,7 @@ function Hero() {
           animate={reduce ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.45, ease: staggerEase }}
         >
-          Portfolio · CS & engineering
+          Portfolio · Cybersecurity & software engineering
         </motion.p>
 
         <motion.h1
@@ -141,6 +153,66 @@ function Hero() {
   )
 }
 
+function QuickFacts() {
+  return (
+    <section
+      aria-label="Quick facts"
+      className="relative overflow-hidden border-b border-neutral-200/70 bg-white/45 px-4 py-12 dark:border-white/[0.06] dark:bg-white/[0.025] sm:px-6"
+    >
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sky-400/40 to-transparent"
+        aria-hidden
+      />
+      <div className="mx-auto max-w-4xl">
+        <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="font-mono text-[10px] font-medium uppercase tracking-[0.22em] text-neutral-500 dark:text-neutral-500">
+              Quick facts
+            </p>
+            <h2 className="font-display mt-2 text-2xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-50">
+              Signals at a glance
+            </h2>
+          </div>
+          <p className="max-w-sm text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+            Security research, open source, publishing, and shipped software in
+            one compact snapshot.
+          </p>
+        </div>
+
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {quickFacts.map((fact, index) => (
+            <motion.div
+              key={fact}
+              className={`group relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white/75 p-4 shadow-sm backdrop-blur-sm transition-colors hover:border-sky-300/70 dark:border-white/10 dark:bg-white/[0.05] dark:hover:border-sky-500/35 ${
+                index === 0 ? 'lg:col-span-2' : ''
+              }`}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-8% 0px' }}
+              transition={{
+                duration: 0.4,
+                delay: index * 0.035,
+                ease: staggerEase,
+              }}
+            >
+              <div
+                className="pointer-events-none absolute inset-0 bg-gradient-to-br from-sky-500/[0.08] via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                aria-hidden
+              />
+              <div className="relative flex items-start gap-3">
+                <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-sky-500 shadow-[0_0_18px_rgb(14_165_233/0.35)] dark:bg-sky-400" />
+                <p className="text-sm font-semibold leading-relaxed text-neutral-800 dark:text-neutral-100">
+                  {fact}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function SkillsPills({ items, delay = 0 }) {
   const reduce = useReducedMotion()
   return (
@@ -187,6 +259,7 @@ export default function App() {
       <Navbar activeSectionId={activeSectionId} />
       <main>
         <Hero />
+        <QuickFacts />
 
         <SectionDivider />
 
@@ -229,8 +302,9 @@ export default function App() {
             className="!py-20"
           >
             <p className="mb-10 max-w-2xl text-[15px] leading-relaxed text-neutral-600 dark:text-neutral-400">
-              A few things I’ve taken from idea to something people can install,
-              download, or click through—no mockups-only slides.
+              Security tooling, responsible disclosure work, mobile software,
+              and automation projects that show the path from research to
+              practical implementation.
             </p>
             <div className="flex flex-col gap-8">
               {projects.map((p) => (
@@ -252,6 +326,60 @@ export default function App() {
                   </h3>
                   <SkillsPills items={cat.items} delay={idx * 0.06} />
                 </div>
+              </MotionSection>
+            ))}
+          </div>
+        </Section>
+
+        <SectionDivider />
+
+        <Section
+          id="certifications"
+          eyebrow="Credentials"
+          title="Certifications"
+        >
+          <div className="grid gap-3">
+            {certifications.map((item) => (
+              <MotionSection key={item.title}>
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-start justify-between gap-4 rounded-2xl border border-neutral-200/80 bg-white/70 px-5 py-4 shadow-sm backdrop-blur-md transition-colors hover:border-sky-300/70 hover:bg-white dark:border-white/[0.08] dark:bg-white/[0.04] dark:hover:border-sky-500/35 dark:hover:bg-white/[0.07]"
+                >
+                  <span>
+                    <span className="block text-[15px] font-semibold text-neutral-800 dark:text-neutral-100">
+                      {item.title}
+                    </span>
+                    <span className="mt-1 block text-xs font-medium uppercase tracking-[0.16em] text-neutral-500 dark:text-neutral-500">
+                      {item.issuer} verified credential
+                    </span>
+                  </span>
+                  <ExternalIcon className="mt-1 h-4 w-4 shrink-0 text-neutral-400 transition-colors group-hover:text-sky-700 dark:group-hover:text-sky-300" />
+                </a>
+              </MotionSection>
+            ))}
+          </div>
+        </Section>
+
+        <SectionDivider />
+
+        <Section
+          id="community"
+          eyebrow="Community / Leadership"
+          title="Community & Leadership"
+        >
+          <div className="grid gap-5">
+            {communityLeadership.map((item) => (
+              <MotionSection key={item.title}>
+                <article className="rounded-2xl border border-neutral-200/80 bg-white/70 p-5 shadow-md shadow-neutral-900/[0.04] backdrop-blur-md dark:border-white/[0.08] dark:bg-white/[0.04]">
+                  <h3 className="text-sm font-semibold text-neutral-900 dark:text-neutral-50">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-[15px] leading-relaxed text-neutral-600 dark:text-neutral-300">
+                    {item.detail}
+                  </p>
+                </article>
               </MotionSection>
             ))}
           </div>
@@ -301,6 +429,34 @@ export default function App() {
             </div>
           </Section>
         </div>
+
+        <SectionDivider />
+
+        <Section
+          id="impression"
+          eyebrow="Positioning"
+          title="Final Impression"
+        >
+          <div className="rounded-2xl border border-sky-200/80 bg-sky-50/70 p-6 shadow-md shadow-sky-900/[0.05] backdrop-blur-md dark:border-sky-500/20 dark:bg-sky-950/20">
+            <p className="text-[15px] leading-relaxed text-neutral-700 dark:text-neutral-300">
+              When someone visits this portfolio, they should immediately
+              understand:
+            </p>
+            <ol className="mt-5 flex flex-wrap gap-2">
+              {finalImpression.map((item, index) => (
+                <li
+                  key={item}
+                  className="flex items-center gap-2 rounded-full border border-sky-200 bg-white/75 px-3.5 py-2 text-sm font-semibold text-neutral-800 shadow-sm dark:border-sky-500/25 dark:bg-white/[0.06] dark:text-neutral-100"
+                >
+                  <span className="font-mono text-xs text-sky-700 dark:text-sky-300">
+                    {index + 1}
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ol>
+          </div>
+        </Section>
 
         <SectionDivider />
 

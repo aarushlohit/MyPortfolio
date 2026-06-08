@@ -19,16 +19,17 @@ export function Navbar({ activeSectionId = '' }) {
 
   return (
     <header className="sticky top-0 z-[100] border-b border-neutral-200/80 bg-[#f7f7f5]/85 backdrop-blur-xl dark:border-white/[0.08] dark:bg-[#0c0c0c]/85">
-      <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-3 sm:px-6">
         <a
           href="#top"
-          className="font-display text-sm font-semibold tracking-tight text-neutral-900 transition-colors hover:text-sky-900 dark:text-neutral-100 dark:hover:text-sky-300"
+          className="font-display inline-flex shrink-0 items-center whitespace-nowrap text-base font-semibold leading-none tracking-tight text-neutral-900 transition-colors hover:text-sky-900 dark:text-neutral-100 dark:hover:text-sky-300"
+          aria-label="A. Lohit home"
         >
-          {site.name}
+          <span className="translate-y-px">{site.name}</span>
         </a>
 
         <nav
-          className="hidden items-center gap-0.5 lg:flex"
+          className="hidden min-w-0 items-center gap-1 lg:flex"
           aria-label="Primary"
         >
           {navLinks.map((l) => (

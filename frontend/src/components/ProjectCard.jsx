@@ -17,6 +17,7 @@ export function ProjectCard({
   description,
   tech,
   links,
+  disclosures,
 }) {
   const reduce = useReducedMotion()
 
@@ -72,6 +73,51 @@ export function ProjectCard({
               </li>
             ))}
           </ul>
+        )}
+        {disclosures?.length > 0 && (
+          <details className="group/details mt-5 overflow-hidden rounded-2xl border border-neutral-200/80 bg-neutral-50/70 backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.035]">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-3.5 transition-colors hover:bg-white/55 dark:hover:bg-white/[0.045]">
+              <span>
+                <span className="block font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-500">
+                  Disclosure register
+                </span>
+                <span className="mt-1 block text-sm font-semibold text-neutral-800 dark:text-neutral-100">
+                  CERT-In coordinated references
+                </span>
+              </span>
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-neutral-200 bg-white text-neutral-500 transition-all group-open/details:rotate-180 group-open/details:border-sky-300 group-open/details:text-sky-700 dark:border-white/10 dark:bg-white/[0.045] dark:text-neutral-400 dark:group-open/details:border-sky-500/35 dark:group-open/details:text-sky-300">
+                <svg
+                  className="h-3.5 w-3.5"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden
+                >
+                  <path d="m4 6 4 4 4-4" />
+                </svg>
+              </span>
+            </summary>
+            <div className="border-t border-neutral-200/80 px-4 py-1 dark:border-white/10">
+              <ul className="divide-y divide-neutral-200/80 dark:divide-white/10">
+                {disclosures.map((item) => (
+                  <li
+                    key={item.certIn}
+                    className="flex flex-col gap-1 py-3 sm:flex-row sm:items-center sm:justify-between"
+                  >
+                    <span className="text-sm font-medium text-neutral-700 dark:text-neutral-200">
+                      {item.program}
+                    </span>
+                    <span className="font-mono text-xs font-semibold tracking-[0.08em] text-neutral-500 dark:text-neutral-400">
+                      {item.certIn}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </details>
         )}
         {links?.length > 0 && (
           <div className="mt-6 flex flex-wrap gap-2.5">

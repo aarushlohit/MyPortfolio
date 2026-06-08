@@ -7,6 +7,7 @@ export const site = {
   githubProfile: 'https://github.com/AarushLohit',
   linkedin: 'https://in.linkedin.com/in/aarush-lohit-273877380',
   email: 'mailto:aarushlohit.developer@gmail.com',
+  profileImage: 'https://avatars.githubusercontent.com/u/141929019?v=4',
 }
 
 export const quickFacts = [
@@ -42,6 +43,20 @@ export const projects = [
     description:
       'Conducted security assessments of public-facing web applications and portals. Identified and responsibly disclosed 24+ security findings through coordinated disclosure channels. Performed reconnaissance, vulnerability validation, impact assessment, proof-of-concept documentation, and remediation reporting.',
     tech: ['Reconnaissance', 'Vulnerability Validation', 'Reporting'],
+    disclosures: [
+      {
+        program: 'Tamilnadu SSLC Vulnerability',
+        certIn: 'CERTIn-63432926',
+      },
+      {
+        program: 'KNRUH Portal',
+        certIn: 'CERTIn-26441226',
+      },
+      {
+        program: 'BPUT Portal',
+        certIn: 'CERTIn-19131826',
+      },
+    ],
     links: [],
   },
   {

@@ -186,7 +186,7 @@ function Hero() {
               </span>
             </div>
             <div className="relative mt-5 grid grid-cols-2 gap-2">
-              {['Bugcrowd', 'GSSoC', 'PyPI', 'Amazon'].map((item) => (
+              {['Bugcrowd', 'GSSoC', 'PyPI', 'Amazon AppStore'].map((item) => (
                 <span
                   key={item}
                   className="rounded-xl border border-neutral-200/80 bg-white/65 px-3 py-2 text-center text-xs font-semibold text-neutral-700 dark:border-white/10 dark:bg-white/[0.055] dark:text-neutral-200"
